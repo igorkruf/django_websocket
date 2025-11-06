@@ -16,8 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include 
+from django_websocket_app import views as wsviews 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('test/', wsviews.Test.as_view(), name="ws_test")
     
 ]
